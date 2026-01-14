@@ -58,4 +58,4 @@ jobs:
             docker rm test || true
             docker rmi ${{ secrets.DOCKER_USERNAME }}/test:latest || true
             docker pull ${{ secrets.DOCKER_USERNAME }}/test:latest
-            docker run -d -p 80:8080 --name test -e URL=jdbc:mysql://${{ secrets.RDS_URL }}/test" -e USERNAME=${{ secrets.RDS_USERNAME }} -e PASSWORD=${{ secrets.RDS_PASSWORD }} ${{ secrets.DOCKER_USERNAME }}/test:latest
+            docker run -d -p 80:8080 --name test -e URL=jdbc:mysql://${{ secrets.RDS_URL }}/user12 -e USERNAME=${{ secrets.RDS_USERNAME }} -e PASSWORD=${{ secrets.RDS_PASSWORD }} ${{ secrets.DOCKER_USERNAME }}/test:latest
